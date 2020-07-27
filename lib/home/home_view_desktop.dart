@@ -91,7 +91,7 @@ class HomeViewDesktop extends StatelessWidget {
                       width: 80,
                     ),
                     SizedBox(
-                      height: 100,
+                      height: 250,
                     ),
                     socialButton("facebook.png",
                         "https://www.facebook.com/bihimstudios"),
@@ -171,45 +171,73 @@ class HomeViewDesktop extends StatelessWidget {
                 ),
                 Expanded(
                   child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Flexible(
-                            child: Text(
-                              "Hello",
-                              style: GoogleFonts.raleway(
-                                textStyle: TextStyle(
-                                  fontSize: 150,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white,
-                                ),
-                              ),
+                      SizedBox(
+                        height: 80,
+                      ),
+                      FlatButton(
+                        onPressed: () {
+                          Navigator.pushNamed(context, "/about");
+                        },
+                        child: Text(
+                          "ABOUT MYSELF",
+                          style: GoogleFonts.robotoMono(
+                            textStyle: TextStyle(
+                              color: Colors.white,
+                              fontSize: 14,
+                              wordSpacing: 2,
+                              letterSpacing: 1,
                             ),
                           ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 150,
+                      ),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Flexible(
+                                child: Text(
+                                  "Hello",
+                                  style: GoogleFonts.raleway(
+                                    textStyle: TextStyle(
+                                      fontSize: 150,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Text(
+                                ".",
+                                style: GoogleFonts.roboto(
+                                  textStyle: TextStyle(
+                                    fontSize: 150,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.red,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
                           Text(
-                            ".",
-                            style: GoogleFonts.roboto(
+                            "I am\nBihim",
+                            style: GoogleFonts.raleway(
                               textStyle: TextStyle(
                                 fontSize: 150,
                                 fontWeight: FontWeight.bold,
-                                color: Colors.red,
+                                color: Colors.white,
                               ),
                             ),
                           ),
                         ],
-                      ),
-                      Text(
-                        "I am\nBihim",
-                        style: GoogleFonts.raleway(
-                          textStyle: TextStyle(
-                            fontSize: 150,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
-                          ),
-                        ),
                       ),
                     ],
                   ),

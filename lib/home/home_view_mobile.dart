@@ -191,10 +191,13 @@ class HomeViewMobile extends StatelessWidget {
                           SizedBox(
                             height: 140,
                           ),
-                          Image.asset(
-                            "assets/item_rectangle_one.png",
-                            width: 30,
-                            height: 30,
+                          Flexible(
+                            fit: FlexFit.loose,
+                            child: Image.asset(
+                              "assets/item_rectangle_one.png",
+                              width: 30,
+                              height: 30,
+                            ),
                           ),
                         ],
                       ),
@@ -214,14 +217,19 @@ class HomeViewMobile extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      Text(
-                        "Android Developer\nGraphic Designer\nFlutter Developer",
-                        style: GoogleFonts.robotoMono(
-                          textStyle: TextStyle(
-                            color: Colors.white,
-                            fontSize: 14,
-                            wordSpacing: 2,
-                            letterSpacing: 1,
+                      Expanded(
+                        child: Padding(
+                          padding: EdgeInsets.all(20.0),
+                          child: Text(
+                            "Android Developer\nGraphic Designer\nFlutter Developer",
+                            style: GoogleFonts.robotoMono(
+                              textStyle: TextStyle(
+                                color: Colors.white,
+                                fontSize: 14,
+                                wordSpacing: 2,
+                                letterSpacing: 1,
+                              ),
+                            ),
                           ),
                         ),
                       ),
