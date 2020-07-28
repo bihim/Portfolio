@@ -140,7 +140,7 @@ class HomeViewMobile extends StatelessWidget {
                         ],
                       ),
                       SizedBox(
-                        width: 30,
+                        width: 50,
                       ),
                       Column(
                         mainAxisAlignment: MainAxisAlignment.end,
@@ -150,10 +150,14 @@ class HomeViewMobile extends StatelessWidget {
                           height: 150,
                         ), */
                           Column(
+                            mainAxisSize: MainAxisSize.min,
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Row(
                                 children: [
+                                  SizedBox(
+                                    width: 20,
+                                  ),
                                   Text(
                                     "Hello",
                                     style: GoogleFonts.raleway(
@@ -192,7 +196,6 @@ class HomeViewMobile extends StatelessWidget {
                             height: 140,
                           ),
                           Flexible(
-                            fit: FlexFit.loose,
                             child: Image.asset(
                               "assets/item_rectangle_one.png",
                               width: 30,
@@ -234,7 +237,9 @@ class HomeViewMobile extends StatelessWidget {
                         ),
                       ),
                       FlatButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushNamed(context, "/about");
+                        },
                         child: Text(
                           "ABOUT MYSELF",
                           style: GoogleFonts.robotoMono(

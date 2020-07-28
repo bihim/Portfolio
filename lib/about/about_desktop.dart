@@ -2,40 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AboutDesktop extends StatelessWidget {
-  shapesColumns(
-      sizedBoxHeight, assetName, assetHeight, assetWidth, assetOpacity) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        SizedBox(
-          height: sizedBoxHeight,
-        ),
-        Flexible(
-          child: Opacity(
-            opacity: assetOpacity,
-            child: Image.asset(
-              assetName,
-              height: assetHeight,
-              width: assetHeight,
-            ),
-          ),
-        ),
-      ],
-    );
-  }
-
-  positionedShapes(top, left, bottom, right, assetName, height, width) {
+  positionedShapes(x, y, assetName, height, width) {
     return Positioned(
-        top: top,
-        left: left,
-        right: right,
-        bottom: bottom,
-        child: Image.asset(
-          "$assetName.png",
-          height: height,
-          width: width,
-        ));
+      top: y,
+      left: x,
+      child: Image.asset(
+        "$assetName.png",
+        height: height,
+        width: width,
+      ),
+    );
   }
 
   @override
@@ -64,23 +40,43 @@ class AboutDesktop extends StatelessWidget {
               ),
             ),
             Expanded(
-              flex: 4,
+              flex: 6,
               child: Stack(
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      shapesColumns(100.0, "circle.png", 30, 30, 0.5),
-                      shapesColumns(40.0, "cross.png", 50, 50, 0.8),
-                      shapesColumns(0.0, "item_rectangle_one.png", 50, 50, 0.7),
-                      shapesColumns(50.0, "circle.png", 50, 50, 0.8),
-                      shapesColumns(
-                          70.0, "item_rectangle_one.png", 40, 40, 0.4),
-                      shapesColumns(20.0, "cross.png", 20, 20, 1.0),
-                    ],
+                  positionedShapes(87, 322, "circle", 52, 52),
+                  positionedShapes(177, 590, "item_rectangle_two", 38, 38),
+                  positionedShapes(161, 96, "cross", 38, 38),
+                  positionedShapes(423, 294, "item_rectangle_two", 28, 28),
+                  positionedShapes(758, 49, "item_rectangle_one", 24, 24),
+                  Center(
+                    child: Container(
+                      color: Colors.grey[850],
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 30,
+                          vertical: 10,
+                        ),
+                        child: Text(
+                          "I love app development. I am working with android studio since 2nd year of my university life. I ported some rom and customised while I was in class 11. Plus I am a graphic designer." +
+                              " I have worked with some local clients and an international client. This website is fully done in flutter. You can find source code of this website on my github as well as my projects.",
+                          textAlign: TextAlign.center,
+                          style: GoogleFonts.raleway(
+                            textStyle: TextStyle(
+                              color: Colors.white,
+                              fontSize: 40,
+                              height: 1.5,
+                              letterSpacing: 0.4,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
                   ),
-                  positionedShapes(100, 20, 0, 0, "cross", 60, 60),
+                  positionedShapes(307, 588, "cross", 21, 21),
+                  positionedShapes(620, 140, "item_rectangle_two", 35, 35),
+                  positionedShapes(821, 567, "circle", 42, 42),
+                  positionedShapes(1247, 133, "item_rectangle_two", 65, 65),
+                  positionedShapes(1233, 367, "item_rectangle_one", 26, 26),
                 ],
               ),
             )
